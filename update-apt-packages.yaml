@@ -1,9 +1,9 @@
 ---
-- hosts: all
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: all
 
-  become: yes
   tasks:
-    - name: update apt packages
-      apt:
-        upgrade: yes
-        update_cache: yes
+  - name: Print debug message
+    debug:
+      msg: Hello, world!
