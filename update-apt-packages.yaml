@@ -1,12 +1,3 @@
-!---
-!- hosts: all
-
-!  become: ture
-!  tasks:
-!    - name: update apt packages
-!      apt:
-!        upgrade: yes
-
 ---
   - name: install-nano
     hosts: all
