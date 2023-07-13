@@ -8,12 +8,10 @@
 !        upgrade: yes
 
 ---
-- hosts: all
-  become: true
-  become_user: root
-  tasks:
-    - name: Update apt repo and cache on all Debian/Ubuntu boxes
-      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
-
-    - name: Upgrade all packages on servers
-      apt: upgrade=dist force_apt_get=yes
+  - name: install-nano
+    hosts: all
+    tasks:
+      - name: ensure nano is there
+        apt:
+          name: nano
+          state: latest
